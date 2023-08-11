@@ -13,6 +13,8 @@
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
+		A3555ED52A8632E400A04F80 /* Pigeon.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3555ED42A8632E400A04F80 /* Pigeon.g.swift */; };
+		A3555ED82A86342200A04F80 /* pigeon.g.m in Sources */ = {isa = PBXBuildFile; fileRef = A3555ED62A86342200A04F80 /* pigeon.g.m */; };
 		FB5A0EFA970F4213DD725BEF /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176D4BBA78597806C7CB2C5B /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,9 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A997105C1F088BFDDAFEDFA /* Pods-Runner.debug-development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-development.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-development.xcconfig"; sourceTree = "<group>"; };
+		A3555ED42A8632E400A04F80 /* Pigeon.g.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pigeon.g.swift; sourceTree = "<group>"; };
+		A3555ED62A86342200A04F80 /* pigeon.g.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pigeon.g.m; sourceTree = "<group>"; };
+		A3555ED72A86342200A04F80 /* pigeon.g.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pigeon.g.h; sourceTree = "<group>"; };
 		FF01E9ED80A88D5C8190538A /* Pods-Runner.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-staging.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +121,9 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				A3555ED72A86342200A04F80 /* pigeon.g.h */,
+				A3555ED62A86342200A04F80 /* pigeon.g.m */,
+				A3555ED42A8632E400A04F80 /* Pigeon.g.swift */,
 				03D3C0F329DC38B8000412D7 /* LaunchScreen.storyboard */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
@@ -286,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3555ED82A86342200A04F80 /* pigeon.g.m in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				A3555ED52A8632E400A04F80 /* Pigeon.g.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

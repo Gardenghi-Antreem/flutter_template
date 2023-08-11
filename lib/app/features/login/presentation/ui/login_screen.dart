@@ -13,6 +13,7 @@ import 'package:flutter_template/app/shared/style/app_icons.dart';
 import 'package:flutter_template/app/shared/style/app_images.dart';
 import 'package:flutter_template/app/shared/style/app_text_style.dart';
 import 'package:flutter_template/l10n/l10n.dart';
+import 'package:flutter_template/pigeon.g.dart';
 
 const usernameFieldKey = ValueKey('username');
 const passwordFieldKey = ValueKey('password');
@@ -115,6 +116,14 @@ class LoginScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
+                                AppButton(
+                                  text: 'call native side',
+                                  onClick: () {
+                                    NativeSideApi()
+                                        .callNativeSide()
+                                        .then((value) => print(value));
+                                  },
+                                ),
                                 AppButton(
                                   disabled: state.status == LoginStatus.loading,
                                   text: l10n.loginLoginButton,
