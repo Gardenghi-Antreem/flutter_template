@@ -1,0 +1,26 @@
+{
+    "@@locale": "it",
+    "commonErrorUnknownFailureMessage": "Si è verificato un errore",
+    "@commonErrorUnknownFailureMessage": {
+        "description": "Error message shown to the user when a generic error occurred"
+    },
+    "commonErrorServerFailureMessage": "Si è verificato un errore di comunicazione con il server",
+    "@commonErrorServerFailureMessage": {
+        "description": "Error message shown to the user when a server error occurred"
+    },
+    "commonButtonRetry": "Riprova",
+    "commonSettings": "Impostazioni",
+    "splashErrorUnreachableServer": "Server not trovato",
+    "loginWelcomeLabel": "Benvenuto!",
+    "loginInsertDataLabel": "Inserisci i tuoi dati per accedere all'applicativo",
+    "loginUsernameHint": "Username",
+    "loginPasswordHint": "Password",
+    "loginPasswordForgot": "Password dimenticata?",
+    "loginLoginButton": "LOGIN",
+    "onboardingTitleFirstStep": "Massimizza l'efficienza",
+    "onboardingTitleSecondStep": "Migliorare l'accuratezza e la precisione",
+    "onboardingTitleThirdStep": "Sperimentate la connettività",
+    "oboardingSubTitleFirstStep": "Monitoraggio e controllo di tutti i magazzini industriali da un'unica e comoda postazione",
+    "oboardingSubTitleSecondStep": "Rimanete davanti alla concorrenza con analisi avanzate, tracciamento dei dati in tempo reale e reportistica sulle prestazioni",
+    "oboardingSubTitleThirdStep": "Eliminate il fastidio del controllo manuale della macchina con la nostra interfaccia app di facile utilizzo"
+}

@@ -1,0 +1,26 @@
+{
+    "@@locale": "en",
+    "commonErrorUnknownFailureMessage": "An error occurred",
+    "@commonErrorUnknownFailureMessage": {
+        "description": "Error message shown to the user when a generic error occurred"
+    },
+    "commonErrorServerFailureMessage": "A server error occurred",
+    "@commonErrorServerFailureMessage": {
+        "description": "Error message shown to the user when a server error occurred"
+    },
+    "commonButtonRetry": "Retry",
+    "commonSettings": "Settings",
+    "splashErrorUnreachableServer": "Server not found",
+    "loginWelcomeLabel": "Welcome!",
+    "loginInsertDataLabel": "Insert yout data in order to enter the application",
+    "loginUsernameHint": "Username",
+    "loginPasswordHint": "Password",
+    "loginPasswordForgot": "Password forgot?",
+    "loginLoginButton": "LOGIN",
+    "onboardingTitleFirstStep": "Maximize efficiency",
+    "onboardingTitleSecondStep": "Improve accuracy and precision",
+    "onboardingTitleThirdStep": "Experience seamless connectivity",
+    "oboardingSubTitleFirstStep": "Easily monitor and control all of your industrial warehouse  from one convenient location",
+    "oboardingSubTitleSecondStep": "Stay ahead of the competition with advanced analytics, real-time data tracking and performance reporting",
+    "oboardingSubTitleThirdStep": "Eliminate the hassle of manual machine control with our user-friendly app interface"
+}
