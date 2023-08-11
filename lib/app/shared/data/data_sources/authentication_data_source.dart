@@ -1,5 +1,5 @@
-import 'package:flutter_template/app/features/login/data/utils/response_manager.dart';
 import 'package:flutter_template/app/shared/core/api/api_manager.dart';
+import 'package:flutter_template/app/shared/data/utils/response_manager.dart';
 import 'package:flutter_template_api/flutter_template_api.dart';
 
 class AuthenticationDataSource {

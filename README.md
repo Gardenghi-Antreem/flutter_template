@@ -240,6 +240,7 @@ Each feature is divided into 3 further subfolders:
 - Repositories:
     Components that expose a common interface used by the lower layers to access data. They mediate between different sources and implement caching strategies
 
+all common repositories, data sources and entities must be put in the shared foulder
 
 ### Domain layer
 ```

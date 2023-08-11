@@ -30,10 +30,17 @@ Future<void> initServiceLocator() async {
     ..registerLazySingleton<AuthenticationRepository>(
       () => AuthenticationRepositoryImpl(dataSource: sl()),
     )
-    ..registerLazySingleton<LoginBloc>(() => LoginBloc(loginRepository: sl()))
+    ..registerFactory<LoginBloc>(() => LoginBloc(loginRepository: sl()))
 
     // SPLASH
-    ..registerLazySingleton<SplashCubit>(
+    ..registerFactory<SplashCubit>(
       () => SplashCubit(settingsRepository: sl()),
     );
+
+  // Bloc with params exemple
+  // ..registerFactoryParam<ExempleBloc, BuildContext, ExempleBlocParams>(
+  //   (BuildContext _, ExempleBlocParams params) => ExempleBloc(
+  //     params: params,
+  //   ),
+  // )
 }
