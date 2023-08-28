@@ -334,3 +334,8 @@ In order to generate API integration code automatically, add the updated swagger
 
 the Pigeon library is used for integration with the native side. In order to generate the pigeon integration code run the command:
 ```sh generate_native_integration.sh ```
+
+
+## Rename the project 
+``` flutter pub global activate rename ```
+``` flutter pub global run rename --appname "flutter_template" ```
