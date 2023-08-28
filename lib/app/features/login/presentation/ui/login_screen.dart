@@ -119,13 +119,13 @@ class LoginScreen extends StatelessWidget {
                                   disabled: state.status == LoginStatus.loading,
                                   text: l10n.loginLoginButton,
                                   onClick: () => _onLoginButtonPressed(context),
-                                )
+                                ),
                               ],
                             ),
-                            const Spacer()
+                            const Spacer(),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

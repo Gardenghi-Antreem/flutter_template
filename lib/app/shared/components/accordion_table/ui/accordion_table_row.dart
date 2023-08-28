@@ -117,7 +117,7 @@ class AccordionTableRow<T, R> extends StatelessWidget {
                     ),
                   );
                 },
-              )
+              ),
           ],
         ),
       ),

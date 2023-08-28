@@ -193,7 +193,7 @@ class AppTextField extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ]
               : <Widget>[
                   Text(label!, style: lblStyle),

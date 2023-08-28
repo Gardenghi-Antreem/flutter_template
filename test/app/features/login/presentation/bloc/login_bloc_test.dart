@@ -68,7 +68,7 @@ void main() {
           status: LoginStatus.idle,
           username: UsernameField.dirty(value: testUsername),
           password: PasswordField.dirty(value: testPassword),
-        )
+        ),
       ],
     );
 
@@ -108,7 +108,7 @@ void main() {
           status: LoginStatus.idle,
           username: UsernameField.dirty(value: testUsername),
           password: PasswordField.dirty(value: testPassword),
-        )
+        ),
       ],
     );
   });
