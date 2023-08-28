@@ -27,4 +27,16 @@ class AppTextStyles {
     fontStyle: FontStyle.normal,
     fontSize: 12,
   );
+  static final interactive12pxRegularEnabledC = GoogleFonts.inter(
+    color: AppColors.secondaryMain,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    fontSize: 12,
+  );
+  static final interactive12pxBoldDarkC = GoogleFonts.inter(
+    color: AppColors.secondaryDark,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    fontSize: 12,
+  );
 }

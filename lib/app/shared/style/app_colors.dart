@@ -32,11 +32,15 @@ class AppColors {
   static const gray100Black = Color(0xff000000);
 
   // custom colors
+  static const accentLighter = Color(0xffb2e8e0);
   static const accentMain = Color(0xff01af9d);
   static const primaryXLighter = Color(0xffd1a0d1);
   static const primaryLighter = Color(0xffA869A0);
   static const primaryLight = Color(0xff8f5087);
   static const primaryMain = Color(0xff76376e);
+  static const primaryDark = Color(0xff5c2e58);
+  static const primaryDarker = Color(0xff421b3f);
   static const secondaryMain = Color(0xff270B32);
   static const secondaryDark = Color(0xff1a071f);
+  static const secondaryDarker = Color(0xff0d030f);
 }
