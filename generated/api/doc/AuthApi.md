@@ -27,7 +27,7 @@ final UserCredentials userCredentials = ; // UserCredentials |
 try {
     final response = api.v2AuthLoginPost(userCredentials);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthApi->v2AuthLoginPost: $e\n');
 }
 ```

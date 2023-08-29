@@ -20,10 +20,11 @@ class NativeSideApi {
 
   Future<String> callNativeSide() async {
     final BasicMessageChannel<Object?> channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.flutter_template.NativeSideApi.callNativeSide', codec,
-        binaryMessenger: _binaryMessenger);
-    final List<Object?>? replyList =
-        await channel.send(null) as List<Object?>?;
+      'dev.flutter.pigeon.flutter_template.NativeSideApi.callNativeSide',
+      codec,
+      binaryMessenger: _binaryMessenger,
+    );
+    final List<Object?>? replyList = await channel.send(null) as List<Object?>?;
     if (replyList == null) {
       throw PlatformException(
         code: 'channel-error',
@@ -54,14 +55,18 @@ abstract class FlutterSideApi {
   static void setup(FlutterSideApi? api, {BinaryMessenger? binaryMessenger}) {
     {
       final BasicMessageChannel<Object?> channel = BasicMessageChannel<Object?>(
-          'dev.flutter.pigeon.flutter_template.FlutterSideApi.callFlutterApp', codec,
-          binaryMessenger: binaryMessenger);
+        'dev.flutter.pigeon.flutter_template.FlutterSideApi.callFlutterApp',
+        codec,
+        binaryMessenger: binaryMessenger,
+      );
       if (api == null) {
         channel.setMessageHandler(null);
       } else {
         channel.setMessageHandler((Object? message) async {
-          assert(message != null,
-          'Argument for dev.flutter.pigeon.flutter_template.FlutterSideApi.callFlutterApp was null.');
+          assert(
+            message != null,
+            'Argument for dev.flutter.pigeon.flutter_template.FlutterSideApi.callFlutterApp was null.',
+          );
           final List<Object?> args = (message as List<Object?>?)!;
           final String? arg_error = (args[0] as String?);
           api.callFlutterApp(arg_error);
