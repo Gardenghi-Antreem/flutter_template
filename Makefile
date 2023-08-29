@@ -1,6 +1,6 @@
 generate_api:
 	rm -Rf generated/api
-	openapi-generator generate -i ./openapi/swagger.json \
+	openapi-generator-cli generate -i ./openapi/swagger.json \
 	 -p pubAuthor="Gellify" \
 	 -p pubDescription="API library for flutter template" \
 	 -p pubLibrary=generated/api \
