@@ -1,6 +1,6 @@
 name: flutter_template_api
 version: 1.0.0
-description: API library for flutter template
+description: OpenAPI API client
 homepage: homepage
 
 environment:
