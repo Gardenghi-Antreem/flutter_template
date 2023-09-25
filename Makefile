@@ -21,3 +21,10 @@ cli_generate_api:
 generate_native_integration:
 	rm -Rf lib/pigeon.g.dart
 	sh generate_native_integration.sh	
+
+create_env_file:
+	cp .env.example .env
+
+update_env_file:
+	echo "STARTUP_PAGE=$(STARTUP_PAGE)" > .env
+	echo "BASE_URL=$(BASE_URL)" >> .env
