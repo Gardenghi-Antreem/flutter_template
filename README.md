@@ -338,4 +338,4 @@ the Pigeon library is used for integration with the native side. In order to gen
 
 ## Rename the project 
 ``` flutter pub global activate rename ```
-``` flutter pub global run rename --appname "flutter_template" ```
+``` rename setAppName --targets ios,android --value "flutter_template" ```
