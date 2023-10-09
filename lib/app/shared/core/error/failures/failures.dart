@@ -18,6 +18,10 @@ abstract class Failure extends Equatable {
     return UnknownFailure();
   }
 
+  factory Failure.fromMessage(String message) {
+    return BuisinessLogicFailure(errorMessage: message);
+  }
+
   @override
   List<Object> get props => [];
 
@@ -28,6 +32,14 @@ abstract class Failure extends Equatable {
 class ServerFailure extends Failure {
   @override
   String message() => tr.commonErrorServerFailureMessage;
+}
+
+class BuisinessLogicFailure extends Failure {
+  const BuisinessLogicFailure({required this.errorMessage});
+  final String errorMessage;
+
+  @override
+  String message() => errorMessage;
 }
 
 class UnknownFailure extends Failure {
