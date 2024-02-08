@@ -47,86 +47,91 @@ class LoginScreen extends StatelessWidget {
             builder: (context, state) => Center(
               child: Container(
                 constraints: const BoxConstraints(maxWidth: 800),
-                child: Form(
-                  child: CustomScrollView(
-                    physics: const ClampingScrollPhysics(),
-                    slivers: [
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 60,
-                            ),
-                            Center(
-                              child: Image.asset(
-                                AppImages.company_logo,
-                                height: 80,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: Form(
+                    child: CustomScrollView(
+                      physics: const ClampingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: 60,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 100,
-                            ),
-                            Text(
-                              l10n.loginWelcomeLabel,
-                              style: AppTextStyles.headingLevel2BoldWhiteSx,
-                              textAlign: TextAlign.left,
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              l10n.loginInsertDataLabel,
-                              style: AppTextStyles.body16pxRegularWhiteSx,
-                            ),
-                            const SizedBox(
-                              height: 36,
-                            ),
-                            AppTextField(
-                              key: usernameFieldKey,
-                              placeHolder: 'username',
-                              onChange: (value) => context
-                                  .read<LoginBloc>()
-                                  .add(UsernameChanged(newUsername: value)),
-                            ),
-                            const SizedBox(
-                              height: 58,
-                            ),
-                            AppTextField(
-                              key: passwordFieldKey,
-                              placeHolder: 'password',
-                              type: state.showPassword
-                                  ? AppTextFieldType.text
-                                  : AppTextFieldType.password,
-                              rightIcon: state.showPassword
-                                  ? AppIcons.visibilityOn
-                                  : AppIcons.visibilityOff,
-                              onRightIconTap: () =>
-                                  _togglePasswordVisibility(context),
-                              onChange: (value) => context
-                                  .read<LoginBloc>()
-                                  .add(PasswordChanged(newPassword: value)),
-                            ),
-                            const SizedBox(
-                              height: 55,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                AppButton(
-                                  disabled: state.status == LoginStatus.loading,
-                                  text: l10n.loginLoginButton,
-                                  onClick: () => _onLoginButtonPressed(context),
+                              Center(
+                                child: Image.asset(
+                                  AppImages.company_logo,
+                                  height: 80,
                                 ),
-                              ],
-                            ),
-                            const Spacer(),
-                          ],
+                              ),
+                              const SizedBox(
+                                height: 100,
+                              ),
+                              Text(
+                                l10n.loginWelcomeLabel,
+                                style: AppTextStyles.headingLevel2BoldWhiteSx,
+                                textAlign: TextAlign.left,
+                              ),
+                              const SizedBox(
+                                height: 4,
+                              ),
+                              Text(
+                                l10n.loginInsertDataLabel,
+                                style: AppTextStyles.body16pxRegularWhiteSx,
+                              ),
+                              const SizedBox(
+                                height: 36,
+                              ),
+                              AppTextField(
+                                key: usernameFieldKey,
+                                placeHolder: 'username',
+                                onChange: (value) => context
+                                    .read<LoginBloc>()
+                                    .add(UsernameChanged(newUsername: value)),
+                              ),
+                              const SizedBox(
+                                height: 58,
+                              ),
+                              AppTextField(
+                                key: passwordFieldKey,
+                                placeHolder: 'password',
+                                type: state.showPassword
+                                    ? AppTextFieldType.text
+                                    : AppTextFieldType.password,
+                                rightIcon: state.showPassword
+                                    ? AppIcons.visibilityOn
+                                    : AppIcons.visibilityOff,
+                                onRightIconTap: () =>
+                                    _togglePasswordVisibility(context),
+                                onChange: (value) => context
+                                    .read<LoginBloc>()
+                                    .add(PasswordChanged(newPassword: value)),
+                              ),
+                              const SizedBox(
+                                height: 55,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  AppButton(
+                                    disabled:
+                                        state.status == LoginStatus.loading,
+                                    text: l10n.loginLoginButton,
+                                    onClick: () =>
+                                        _onLoginButtonPressed(context),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
