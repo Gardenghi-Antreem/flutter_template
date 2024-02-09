@@ -14,7 +14,7 @@ abstract class FlutterSideApi {
 
 ////////////////////// exemple how to use the flutter api ////////////////////////////
 /// first we implement a response listener or a class that return some information to the native side 
-/// if we want to return someting to the native side we need to retyrb it in the method
+/// if we want to return someting to the native side we need to return it in the method
 
 // class ResponseListener extends FlutterSideApi {
 //   ResponseListener({this.action});
@@ -26,4 +26,4 @@ abstract class FlutterSideApi {
 // }
 
 /// then we can use it like this, one it is set up every time the native side call the method callFlutterApp it will call the action
-//  ZebraResponse.setup(PrinterResponseListener(action: onPrintEndAction));
+//  ZebraResponse.setup(ResponseListener(action: onPrintEndAction));
