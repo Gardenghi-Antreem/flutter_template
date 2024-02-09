@@ -1,6 +1,7 @@
 import 'package:flutter_template/app/shared/core/error/failures/failures.dart';
 import 'package:flutter_template/app/shared/core/result/result.dart';
 import 'package:flutter_template/app/shared/data/data_sources/authentication_data_source.dart';
+import 'package:flutter_template/app/shared/domain/entities/user.dart';
 import 'package:flutter_template/app/shared/domain/repositories/authentication_repository.dart';
 
 class AuthenticationRepositoryImpl extends AuthenticationRepository {
@@ -9,10 +10,15 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
   final AuthenticationDataSource dataSource;
 
   @override
-  AsyncResult<void> login(String username, String password) async {
+  AsyncResult<User> login(String username, String password) async {
     try {
       await dataSource.login(username, password);
-      return Success(null);
+      return Success(
+        const User(
+          id: 'id',
+          username: 'username',
+        ),
+      );
     } on Exception catch (e) {
       return Error(Failure.fromException(e));
     } catch (exception) {

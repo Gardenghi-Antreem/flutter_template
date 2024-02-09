@@ -19,5 +19,17 @@ final GoRouter router = GoRouter(
         return const LoginPage();
       },
     ),
+
+    // Example of a route with parameters
+    // GoRoute(
+    //   path: RoutesPaths.changePassword,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     final param = state.extra! as ChangePasswordParam;
+    //     return ChangePasswordPage(
+    //       mode: param.mode,
+    //       oldPassword: param.oldPassword,
+    //     );
+    //   },
+    // ),
   ],
 );

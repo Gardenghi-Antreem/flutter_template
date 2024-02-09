@@ -40,7 +40,11 @@ Future<void> initServiceLocator() async {
 
     // SPLASH
     ..registerFactory<SplashCubit>(
-      () => SplashCubit(settingsRepository: sl()),
+      () => SplashCubit(
+        settingsRepository: sl(),
+        authenticationRepository: sl(),
+        appBloc: sl(),
+      ),
     );
 
   // Bloc with params exemple
