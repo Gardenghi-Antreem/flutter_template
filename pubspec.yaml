@@ -17,6 +17,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_dotenv: ^5.1.0
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.3.7
@@ -42,6 +43,12 @@ dev_dependencies:
   mocktail: ^1.0.3
   test: ^1.24.3
   very_good_analysis: ^5.1.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/launch_icon.png"
+  min_sdk_android: 21
 
 flutter:
   uses-material-design: true
