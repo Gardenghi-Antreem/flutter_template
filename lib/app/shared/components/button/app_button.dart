@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_template/app/shared/components/button/app_button_style.dart';
+import 'package:flutter_template/app/shared/style/icon_models.dart';
 
 class AppButton extends StatelessWidget {
   ///App standard button

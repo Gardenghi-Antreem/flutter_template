@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/app/shared/style/app_colors.dart';
+import 'package:flutter_template/app/shared/style/icon_models.dart';
 
 enum AppButtonSize {
   medium._(50, 16, 22);
@@ -18,15 +19,6 @@ enum AppButtonVariant {
 /// *******************  STYLES DEFINITION ***********************
 
 const _borderRadius = BorderRadius.all(Radius.circular(25));
-
-class SvgColorDef {
-  SvgColorDef({
-    required this.enabledColor,
-    required this.disabledColor,
-  });
-  Color enabledColor;
-  Color disabledColor;
-}
 
 SvgColorDef primarySvgColors() => SvgColorDef(
       enabledColor: AppButtonColors.buttonLabelPrimary,
