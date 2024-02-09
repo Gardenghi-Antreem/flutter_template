@@ -6,7 +6,8 @@ class AppButton extends StatelessWidget {
   ///App standard button
   const AppButton({
     super.key,
-    required this.text,
+    this.text = '',
+    this.labelTextStyle,
     this.icon,
     this.variant = AppButtonVariant.primary,
     this.disabled = false,
@@ -14,6 +15,7 @@ class AppButton extends StatelessWidget {
     required this.onClick,
     this.textDirection = TextDirection.rtl,
     this.image,
+    this.coverHorizontalSpace = true,
   });
 
   ///OPTIONAL. Disables the button. Default: false
@@ -28,6 +30,9 @@ class AppButton extends StatelessWidget {
   ///OPTIONAL. The text shown in the button.
   final String text;
 
+  ///OPTIONAL. label text style
+  final TextStyle? labelTextStyle;
+
   ///OPTIONAL. The icon shown in the button.
   final String? icon;
 
@@ -37,7 +42,11 @@ class AppButton extends StatelessWidget {
   ///OPTIONAL. The direction text in the button
   final TextDirection textDirection;
 
+  ///OPTIONAL. The image in the button
   final Image? image;
+
+  ///OPTIONAL. define if the button try to conver all the space horizontally
+  final bool coverHorizontalSpace;
 
   @override
   Widget build(BuildContext context) {
@@ -56,22 +65,26 @@ class AppButton extends StatelessWidget {
                 )
               : //if icon defined but no text
               (text.isEmpty)
-                  ? IconButton(
-                      // <-- ElevatedButton
+                  ? ElevatedButton(
                       onPressed: disabled ? null : onClick,
-                      icon: SvgPicture.asset(
-                        icon!,
-                        colorFilter: disabled
-                            ? ColorFilter.mode(
-                                svgCol.disabledColor,
-                                BlendMode.srcIn,
-                              )
-                            : ColorFilter.mode(
-                                svgCol.enabledColor,
-                                BlendMode.srcIn,
-                              ),
-                      ),
                       style: buttonStyle,
+                      child: CoverHorizontalSpaceWidget(
+                        coverHorizontalSpace: coverHorizontalSpace,
+                        child: SvgPicture.asset(
+                          icon!,
+                          colorFilter: disabled
+                              ? ColorFilter.mode(
+                                  svgCol.disabledColor,
+                                  BlendMode.srcIn,
+                                )
+                              : ColorFilter.mode(
+                                  svgCol.enabledColor,
+                                  BlendMode.srcIn,
+                                ),
+                          width: size.iconSize,
+                          height: size.iconSize,
+                        ),
+                      ),
                     )
                   : //if icon and text
                   Directionality(
@@ -79,27 +92,34 @@ class AppButton extends StatelessWidget {
                       child: ElevatedButton.icon(
                         // <-- ElevatedButton
                         onPressed: disabled ? null : onClick,
-                        icon: icon!.contains('png')
-                            ? Image.asset(
-                                icon!,
-                                height: size.iconSize,
-                                width: size.iconSize,
-                              )
-                            : SvgPicture.asset(
-                                icon!,
-                                width: size.iconSize,
-                                height: size.iconSize,
-                                colorFilter: disabled
-                                    ? ColorFilter.mode(
-                                        svgCol.disabledColor,
-                                        BlendMode.srcIn,
-                                      )
-                                    : ColorFilter.mode(
-                                        svgCol.enabledColor,
-                                        BlendMode.srcIn,
-                                      ),
-                              ),
-                        label: Text(text.toUpperCase(), style: labelStyle),
+                        icon: CoverHorizontalSpaceWidget(
+                          coverHorizontalSpace: coverHorizontalSpace,
+                          child: icon!.contains('png')
+                              ? Image.asset(
+                                  icon!,
+                                  height: size.iconSize,
+                                  width: size.iconSize,
+                                )
+                              : SvgPicture.asset(
+                                  icon!,
+                                  width: size.iconSize,
+                                  height: size.iconSize,
+                                  colorFilter: disabled
+                                      ? ColorFilter.mode(
+                                          svgCol.disabledColor,
+                                          BlendMode.srcIn,
+                                        )
+                                      : ColorFilter.mode(
+                                          svgCol.enabledColor,
+                                          BlendMode.srcIn,
+                                        ),
+                                ),
+                        ),
+                        label: CoverHorizontalSpaceWidget(
+                          coverHorizontalSpace: coverHorizontalSpace,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          child: Text(text, style: labelStyle),
+                        ),
                         style: buttonStyle,
                       ),
                     ),
@@ -118,5 +138,30 @@ class AppButton extends StatelessWidget {
       case AppButtonVariant.primary:
         return primarySvgColors();
     }
+  }
+}
+
+class CoverHorizontalSpaceWidget extends StatelessWidget {
+  const CoverHorizontalSpaceWidget({
+    super.key,
+    required this.child,
+    required this.coverHorizontalSpace,
+    this.mainAxisAlignment = MainAxisAlignment.center,
+  });
+
+  final Widget child;
+  final bool coverHorizontalSpace;
+  final MainAxisAlignment mainAxisAlignment;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize:
+          coverHorizontalSpace == false ? MainAxisSize.min : MainAxisSize.max,
+      mainAxisAlignment: mainAxisAlignment,
+      children: [
+        child,
+      ],
+    );
   }
 }
