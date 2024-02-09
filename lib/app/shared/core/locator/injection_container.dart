@@ -1,5 +1,6 @@
 import 'package:flutter_template/app/features/login/presentation/bloc/login_bloc.dart';
 import 'package:flutter_template/app/features/splash/presentation/bloc/splash_cubit.dart';
+import 'package:flutter_template/app/shared/app_state/app_bloc.dart';
 import 'package:flutter_template/app/shared/core/api/api_manager.dart';
 import 'package:flutter_template/app/shared/core/config/config.dart';
 import 'package:flutter_template/app/shared/data/data_sources/authentication_data_source.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_template/app/shared/data/repositories/authentication_rep
 import 'package:flutter_template/app/shared/data/repositories/settings_repository_impl.dart';
 import 'package:flutter_template/app/shared/domain/repositories/authentication_repository.dart';
 import 'package:flutter_template/app/shared/domain/repositories/settings_repository.dart';
+import 'package:flutter_template/app/shared/utils/storage.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -18,10 +20,14 @@ Future<void> initServiceLocator() async {
     ..registerLazySingleton<Config>(
       Config.new,
     )
+    ..registerLazySingleton<AppStorage>(
+      AppStorage.new,
+    )
     ..registerLazySingleton<SettingsRepository>(
       SettingsRepositoryImplementation.new,
     )
     ..registerLazySingleton<ApiManager>(() => ApiManager(config: sl()))
+    ..registerLazySingleton<AppCubit>(() => AppCubit(appStorage: sl()))
 
     // AUTH
     ..registerLazySingleton<AuthenticationDataSource>(
