@@ -4,5 +4,5 @@ flutter pub run pigeon \
   --objc_header_out ios/Runner/pigeon.g.h \
   --objc_source_out ios/Runner/pigeon.g.m \
   --swift_out ios/Runner/Pigeon.g.swift \
-  --kotlin_out android/app/src/main/kotlin/com/scmgroup/pigeon/Pigeon.g.kt \
-  --kotlin_package "com.scmgroup.pigeon" \
+  --kotlin_out android/app/src/main/kotlin/com/fluttertemplate/pigeon/Pigeon.g.kt \
+  --kotlin_package "com.fluttertemplate.pigeon" \
