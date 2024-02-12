@@ -213,9 +213,9 @@ The folder `lib/app` contains the following subfolders:
 
 ```
 ├── login
-│   ├─── data
 │   ├─── domain
 │   ├─── presentation
+│   ├─── data *
 ```
 
 Each feature is divided into 3 further subfolders:
@@ -223,10 +223,14 @@ Each feature is divided into 3 further subfolders:
     Entities, use cases and repository interface. It containts the core aspects and the business logic of the feature.
     For projects without complex functionalities, the use cases can be omitted and this layer would contains only local entities definitions and repositories interfaces. 
     This second option is the choice made for the current project
-- data: 
-    Repositories implementation and data sources. It manages access to the data required for the feature
 - presentation: 
     UI and view logic (BLoC). It shows the data to the user and manages interactions
+- data: 
+    Repositories implementation and data sources. It manages access to the data required for the feature,
+    *NOTE: the majority of repository and data source are used in more than one feature. so it's better to put them in the shared foulder 
+
+
+all common repositories, data sources and entities must be put in the shared foulder
 
 ### Data layer
 ```
@@ -239,8 +243,6 @@ Each feature is divided into 3 further subfolders:
     Components that provide functionalities to retrieve, edit and store data. Sources can provide access to remote, local or in-memory data. This is the layer where actual integration with the APIs is implemented.
 - Repositories:
     Components that expose a common interface used by the lower layers to access data. They mediate between different sources and implement caching strategies
-
-all common repositories, data sources and entities must be put in the shared foulder
 
 ### Domain layer
 ```
@@ -293,6 +295,7 @@ The repositories interface are keeped in order to define a contract between the 
     Contains utility classes and functions used in the project
 - Data/Domain/Presentation
     Contain entities, repositories, widgets used by more than a single feature. They mantain the same structure of the corresponding feature folders
+
 
 
 ### Tests
