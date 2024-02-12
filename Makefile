@@ -18,10 +18,6 @@ cli_generate_api:
 	 -p pubName=flutter_template_api
 	cd ./generated/api; sleep 5; flutter pub get && dart run build_runner build
 
-generate_native_integration:
-	rm -Rf lib/pigeon.g.dart
-	sh generate_native_integration.sh	
-
 create_env_file:
 	cp .env.example .env
 

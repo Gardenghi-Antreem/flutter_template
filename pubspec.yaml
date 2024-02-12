@@ -30,7 +30,6 @@ dependencies:
   go_router: ^13.1.0
   google_fonts: ^6.1.0
   intl: ^0.18.1
-  pigeon: ^17.0.0
   shared_preferences: ^2.1.0
 
 

@@ -333,12 +333,6 @@ In order to generate API integration code automatically, add the updated swagger
 ```make generate_api```
 
 
-## Native Integration 📫
-
-the Pigeon library is used for integration with the native side. In order to generate the pigeon integration code run the command:
-```make generate_native_integration```
-
-
 ## Rename the project 
 ``` flutter pub global activate rename ```
 ``` rename setAppName --targets ios,android --value "flutter_template" ```
