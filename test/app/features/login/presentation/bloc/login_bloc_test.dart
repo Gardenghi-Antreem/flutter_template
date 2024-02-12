@@ -6,6 +6,7 @@ import 'package:flutter_template/app/shared/core/error/failures/failures.dart';
 import 'package:flutter_template/app/shared/core/form_fields/password_field.dart';
 import 'package:flutter_template/app/shared/core/form_fields/username_field.dart';
 import 'package:flutter_template/app/shared/core/result/result.dart';
+import 'package:flutter_template/app/shared/domain/entities/user.dart';
 import 'package:flutter_template/app/shared/domain/repositories/authentication_repository.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -18,6 +19,7 @@ void main() {
   late MockAuthenticationRepository mockAuthRepository;
   late LoginBloc loginBloc;
 
+  const testId = 'id';
   const testUsername = 'test';
   const testPassword = 'pwd1234!';
 
@@ -25,7 +27,6 @@ void main() {
     mockAuthRepository = MockAuthenticationRepository();
     loginBloc = LoginBloc(loginRepository: mockAuthRepository);
   });
-
   group('LoginBloc', () {
     blocTest<LoginBloc, LoginState>(
       'emits no state when nothing is added',
@@ -37,8 +38,9 @@ void main() {
       'emits Loading, Success and Idle when LoginButtonPressed is added and the use case succeeds',
       build: () => loginBloc,
       setUp: () {
-        when(mockAuthRepository.login(any, any))
-            .thenAnswer((_) async => Success(null));
+        when(mockAuthRepository.login(any, any)).thenAnswer(
+          (_) async => Success(const User(id: testId, username: testUsername)),
+        );
       },
       act: (bloc) => bloc
         ..add(const UsernameChanged(newUsername: testUsername))
